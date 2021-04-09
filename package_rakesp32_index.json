@@ -14,10 +14,10 @@
 					"architecture": "esp32",
 					"version": "1.0.0",
 					"category": "ESP32",
-					"url": "https://github.com/espressif/arduino-esp32/releases/download/1.0.0/esp32-1.0.6.zip",
-					"archiveFileName": "esp32-1.0.6.zip",
-					"checksum": "SHA-256:982da9aaa181b6cb9c692dd4c9622b022ecc0d1e3aa0c5b70428ccc3c1b4556b",
-					"size": "51126662",
+					"url": "https://github.com/RAKWireless/RAK-ESP32-Arduino/archive/refs/tags/1.0.0.zip",
+					"archiveFileName": "1.0.0.zip",
+					"checksum": "SHA-256:C7399E9609AAD56C33865845DF8673CB8C51C70624DA266DA77982CDF614934F",
+					"size": "108336667",
 					"help": {
 						"online": ""
 					},
