@@ -3,10 +3,10 @@
 		{
 			"name": "rakesp32",
 			"maintainer": "RAKwireless",
-			"websiteURL": "https://RAKwireless.com",
+			"websiteURL": "https://docs.rakwireless.com/Product-Categories/WisBlock/",
 			"email": "inquiry@RAKwireless.com",
 			"help": {
-				"online": "http://RAKwireless.com"
+				"online": "https://forum.rakwireless.com/"
 			},
 			"platforms": [
 				{
@@ -19,7 +19,7 @@
 					"checksum": "SHA-256:F3BEB042297D5BA338E45E1CB20FF4A85C5FEA4F8EDA8631F38BB4945BFC43EE",
 					"size": "108336757",
 					"help": {
-						"online": ""
+						"online": "https://forum.rakwireless.com/"
 					},
 					"boards": [
 						{

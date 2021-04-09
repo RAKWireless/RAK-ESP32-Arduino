@@ -1,16 +1,16 @@
 {
   "packages": [
     {
-      "name": "esp32",
-      "maintainer": "Espressif Systems",
-      "websiteURL": "https://github.com/espressif/arduino-esp32",
-      "email": "hristo@espressif.com",
+      "name": "rakesp32",
+      "maintainer": "RAKwireless",
+      "websiteURL": "https://RAKwireless.com",
+      "email": "inquiry@RAKwireless.com",
       "help": {
-        "online": "http://esp32.com"
+        "online": "https://docs.rakwireless.com/Product-Categories/WisBlock/"
       },
       "platforms": [
         {
-          "name": "esp32",
+          "name": "RAKwireless ESP32 Boards",
           "architecture": "esp32",
           "version": "",
           "category": "ESP32",
@@ -23,13 +23,7 @@
           },
           "boards": [
             {
-              "name": "ESP32 Dev Module"
-            },
-            {
-              "name": "WEMOS LoLin32"
-            },
-            {
-              "name": "WEMOS D1 MINI ESP32"
+              "name": "RAK11200"
             }
           ],
           "toolsDependencies": [
