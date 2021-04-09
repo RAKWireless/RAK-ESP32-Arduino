@@ -36,7 +36,7 @@ SConscript(
     join(
         DefaultEnvironment()
         .PioPlatform()
-        .get_package_dir("framework-arduinoespressif32"),
+        .get_package_dir("framework-arduinorakesp32"),
         "tools",
         "platformio-build-%s.py" % build_mcu,
     )
