@@ -1,5 +1,5 @@
 menu.UploadSpeed=Upload Speed
-menu.SerialMode=Serial Connected To
+
 menu.CPUFreq=CPU Frequency
 menu.FlashFreq=Flash Frequency
 menu.FlashMode=Flash Mode
@@ -10,8 +10,7 @@ menu.PSRAM=PSRAM
 menu.Revision=Board Revision
 menu.LORAWAN_REGION=LoRaWan Region
 menu.LoRaWanDebugLevel=LoRaWan Debug Level
-menu.LoopCore=Arduino Runs On
-menu.EventsCore=Events Run On
+
 
 ##############################################################
 

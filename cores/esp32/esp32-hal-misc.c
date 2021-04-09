@@ -31,21 +31,9 @@
 #include "soc/rtc.h"
 #include "soc/rtc_cntl_reg.h"
 #include "soc/apb_ctrl_reg.h"
+#include "rom/rtc.h"
 #include "esp_task_wdt.h"
 #include "esp32-hal.h"
-
-#include "esp_system.h"
-#ifdef ESP_IDF_VERSION_MAJOR // IDF 4+
-#if CONFIG_IDF_TARGET_ESP32 // ESP32/PICO-D4
-#include "esp32/rom/rtc.h"
-#elif CONFIG_IDF_TARGET_ESP32S2
-#include "esp32s2/rom/rtc.h"
-#else 
-#error Target CONFIG_IDF_TARGET is not supported
-#endif
-#else // ESP32 Before IDF 4.0
-#include "rom/rtc.h"
-#endif
 
 //Undocumented!!! Get chip temperature in Farenheit
 //Source: https://github.com/pcbreflux/espressif/blob/master/esp32/arduino/sketchbook/ESP32_int_temp_sensor/ESP32_int_temp_sensor.ino
@@ -143,12 +131,12 @@ BaseType_t xTaskCreateUniversal( TaskFunction_t pxTaskCode,
 #endif
 }
 
-unsigned long ARDUINO_ISR_ATTR micros()
+unsigned long IRAM_ATTR micros()
 {
     return (unsigned long) (esp_timer_get_time());
 }
 
-unsigned long ARDUINO_ISR_ATTR millis()
+unsigned long IRAM_ATTR millis()
 {
     return (unsigned long) (esp_timer_get_time() / 1000ULL);
 }
@@ -158,17 +146,17 @@ void delay(uint32_t ms)
     vTaskDelay(ms / portTICK_PERIOD_MS);
 }
 
-void ARDUINO_ISR_ATTR delayMicroseconds(uint32_t us)
+void IRAM_ATTR delayMicroseconds(uint32_t us)
 {
-    uint64_t m = (uint64_t)esp_timer_get_time();
+    uint32_t m = micros();
     if(us){
-        uint64_t e = (m + us);
+        uint32_t e = (m + us);
         if(m > e){ //overflow
-            while((uint64_t)esp_timer_get_time() > e){
+            while(micros() > e){
                 NOP();
             }
         }
-        while((uint64_t)esp_timer_get_time() < e){
+        while(micros() < e){
             NOP();
         }
     }
@@ -210,7 +198,7 @@ void initArduino()
 #ifdef F_CPU
     setCpuFrequencyMhz(F_CPU/1000000);
 #endif
-#if CONFIG_SPIRAM_SUPPORT || CONFIG_SPIRAM
+#if CONFIG_SPIRAM_SUPPORT
     psramInit();
 #endif
     esp_log_level_set("*", CONFIG_LOG_DEFAULT_LEVEL);
@@ -239,7 +227,7 @@ void initArduino()
 }
 
 //used by hal log
-const char * ARDUINO_ISR_ATTR pathToFileName(const char * path)
+const char * IRAM_ATTR pathToFileName(const char * path)
 {
     size_t i = 0;
     size_t pos = 0;
