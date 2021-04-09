@@ -12,12 +12,12 @@
 				{
 					"name": "RAKwireless ESP32 Boards",
 					"architecture": "esp32",
-					"version": "1.0.3",
+					"version": "1.0.4",
 					"category": "ESP32",
-					"url": "https://github.com/RAKWireless/RAK-ESP32-Arduino/archive/refs/tags/1.0.3.zip",
-					"archiveFileName": "1.0.3.zip",
-					"checksum": "SHA-256:AD7319C34F2CF335AEA3EB10E9441C1C48733952FD0F5E5ACC495A1524599453",
-					"size": "56917518",
+					"url": "https://github.com/RAKWireless/RAK-ESP32-Arduino/archive/refs/tags/1.0.4.zip",
+					"archiveFileName": "1.0.4.zip",
+					"checksum": "SHA-256:7010BC7C7D70CD760D5FF35A881937D817E9013030F9E345BBDF8316A975AD8B",
+					"size": "56862225",
 					"help": {
 						"online": "https://forum.rakwireless.com/"
 					},
@@ -28,52 +28,17 @@
 					],
 					"toolsDependencies": [
 						{
-							"packager": "esp32",
+							"packager": "rakesp32",
 							"name": "xtensa-esp32-elf-gcc",
 							"version": "1.22.0-97-gc752ad5-5.2.0"
 						},
 						{
-							"packager": "esp32",
+							"packager": "rakesp32",
 							"name": "esptool_py",
 							"version": "3.0.0"
 						},
 						{
-							"packager": "esp32",
-							"name": "mkspiffs",
-							"version": "0.2.3"
-						}
-					]
-				},
-				{
-					"name": "RAKwireless ESP32 Boards",
-					"architecture": "esp32",
-					"version": "1.0.2",
-					"category": "ESP32",
-					"url": "https://github.com/RAKWireless/RAK-ESP32-Arduino/archive/refs/tags/1.0.2.zip",
-					"archiveFileName": "1.0.2.zip",
-					"checksum": "SHA-256:7FD40A34A8FA7EB6B86DED659185E5EBF044D78E0072C6AA63D2E46D9EEFC5D1",
-					"size": "108336805",
-					"help": {
-						"online": "https://forum.rakwireless.com/"
-					},
-					"boards": [
-						{
-							"name": "RAK11200"
-						}
-					],
-					"toolsDependencies": [
-						{
-							"packager": "esp32",
-							"name": "xtensa-esp32-elf-gcc",
-							"version": "1.22.0-97-gc752ad5-5.2.0"
-						},
-						{
-							"packager": "esp32",
-							"name": "esptool_py",
-							"version": "3.0.0"
-						},
-						{
-							"packager": "esp32",
+							"packager": "rakesp32",
 							"name": "mkspiffs",
 							"version": "0.2.3"
 						}
