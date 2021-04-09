@@ -36,9 +36,6 @@ class BluetoothSerial: public Stream
         ~BluetoothSerial(void);
 
         bool begin(String localName=String(), bool isMaster=false);
-        bool begin(unsigned long baud){//compatibility
-            return begin();
-        }
         int available(void);
         int peek(void);
         bool hasClient(void);
@@ -63,8 +60,7 @@ class BluetoothSerial: public Stream
         bool isReady(bool checkMaster=false, int timeout=0);
         bool disconnect();
         bool unpairDevice(uint8_t remoteAddress[]);
-        
-        operator bool() const;
+
     private:
         String local_name;
 

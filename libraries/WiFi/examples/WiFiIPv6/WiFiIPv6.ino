@@ -67,34 +67,33 @@ void wifiConnectedLoop(){
 void WiFiEvent(WiFiEvent_t event){
     switch(event) {
 
-        case ARDUINO_EVENT_WIFI_AP_START:
+        case SYSTEM_EVENT_AP_START:
             //can set ap hostname here
             WiFi.softAPsetHostname(AP_SSID);
             //enable ap ipv6 here
             WiFi.softAPenableIpV6();
             break;
 
-        case ARDUINO_EVENT_WIFI_STA_START:
+        case SYSTEM_EVENT_STA_START:
             //set sta hostname here
             WiFi.setHostname(AP_SSID);
             break;
-        case ARDUINO_EVENT_WIFI_STA_CONNECTED:
+        case SYSTEM_EVENT_STA_CONNECTED:
             //enable sta ipv6 here
             WiFi.enableIpV6();
             break;
-        case ARDUINO_EVENT_WIFI_STA_GOT_IP6:
+        case SYSTEM_EVENT_AP_STA_GOT_IP6:
+            //both interfaces get the same event
             Serial.print("STA IPv6: ");
             Serial.println(WiFi.localIPv6());
-            break;
-        case ARDUINO_EVENT_WIFI_AP_GOT_IP6:
             Serial.print("AP IPv6: ");
             Serial.println(WiFi.softAPIPv6());
             break;
-        case ARDUINO_EVENT_WIFI_STA_GOT_IP:
+        case SYSTEM_EVENT_STA_GOT_IP:
             wifiOnConnect();
             wifi_connected = true;
             break;
-        case ARDUINO_EVENT_WIFI_STA_DISCONNECTED:
+        case SYSTEM_EVENT_STA_DISCONNECTED:
             wifi_connected = false;
             wifiOnDisconnect();
             break;

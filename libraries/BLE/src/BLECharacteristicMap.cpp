@@ -5,7 +5,7 @@
  *      Author: kolban
  */
 #include "sdkconfig.h"
-#if defined(CONFIG_BLUEDROID_ENABLED)
+#if defined(CONFIG_BT_ENABLED)
 #include <sstream>
 #include <iomanip>
 #include "BLEService.h"
@@ -131,4 +131,4 @@ std::string BLECharacteristicMap::toString() {
 } // toString
 
 
-#endif /* CONFIG_BLUEDROID_ENABLED */
+#endif /* CONFIG_BT_ENABLED */

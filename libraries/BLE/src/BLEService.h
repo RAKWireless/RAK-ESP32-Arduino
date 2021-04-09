@@ -8,14 +8,14 @@
 #ifndef COMPONENTS_CPP_UTILS_BLESERVICE_H_
 #define COMPONENTS_CPP_UTILS_BLESERVICE_H_
 #include "sdkconfig.h"
-#if defined(CONFIG_BLUEDROID_ENABLED)
+#if defined(CONFIG_BT_ENABLED)
 
 #include <esp_gatts_api.h>
 
 #include "BLECharacteristic.h"
 #include "BLEServer.h"
 #include "BLEUUID.h"
-#include "RTOS.h"
+#include "FreeRTOS.h"
 
 class BLEServer;
 
@@ -93,5 +93,5 @@ private:
 }; // BLEService
 
 
-#endif // CONFIG_BLUEDROID_ENABLED
+#endif // CONFIG_BT_ENABLED
 #endif /* COMPONENTS_CPP_UTILS_BLESERVICE_H_ */

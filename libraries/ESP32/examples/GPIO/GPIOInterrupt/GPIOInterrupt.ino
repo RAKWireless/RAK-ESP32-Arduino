@@ -9,13 +9,13 @@ struct Button {
 Button button1 = {23, 0, false};
 Button button2 = {18, 0, false};
 
-void ARDUINO_ISR_ATTR isr(void* arg) {
+void IRAM_ATTR isr(void* arg) {
     Button* s = static_cast<Button*>(arg);
     s->numberKeyPresses += 1;
     s->pressed = true;
 }
 
-void ARDUINO_ISR_ATTR isr() {
+void IRAM_ATTR isr() {
     button2.numberKeyPresses += 1;
     button2.pressed = true;
 }

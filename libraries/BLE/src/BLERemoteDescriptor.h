@@ -8,14 +8,14 @@
 #ifndef COMPONENTS_CPP_UTILS_BLEREMOTEDESCRIPTOR_H_
 #define COMPONENTS_CPP_UTILS_BLEREMOTEDESCRIPTOR_H_
 #include "sdkconfig.h"
-#if defined(CONFIG_BLUEDROID_ENABLED)
+#if defined(CONFIG_BT_ENABLED)
 #include <string>
 
 #include <esp_gattc_api.h>
 
 #include "BLERemoteCharacteristic.h"
 #include "BLEUUID.h"
-#include "RTOS.h"
+#include "FreeRTOS.h"
 
 class BLERemoteCharacteristic;
 /**
@@ -54,5 +54,5 @@ private:
 
 
 };
-#endif /* CONFIG_BLUEDROID_ENABLED */
+#endif /* CONFIG_BT_ENABLED */
 #endif /* COMPONENTS_CPP_UTILS_BLEREMOTEDESCRIPTOR_H_ */

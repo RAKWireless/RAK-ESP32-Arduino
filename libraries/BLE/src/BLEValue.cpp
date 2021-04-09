@@ -5,7 +5,7 @@
  *      Author: kolban
  */
 #include "sdkconfig.h"
-#if defined(CONFIG_BLUEDROID_ENABLED)
+#if defined(CONFIG_BT_ENABLED)
 #include "BLEValue.h"
 #include "esp32-hal-log.h"
 
@@ -127,4 +127,4 @@ void BLEValue::setValue(uint8_t* pData, size_t length) {
 } // setValue
 
 
-#endif // CONFIG_BLUEDROID_ENABLED
+#endif // CONFIG_BT_ENABLED

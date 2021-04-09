@@ -1,6 +1,0 @@
-{
-    "name": "framework-arduinorakesp32",
-    "description": "Arduino Wiring-based Framework (WisBlock RAK11200)",
-    "version": "1.0.1",
-    "url": "https://github.com/RAKWireless/RAK-ESP32-Arduino"
-}

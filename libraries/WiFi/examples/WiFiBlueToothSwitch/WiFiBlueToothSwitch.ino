@@ -75,33 +75,33 @@ void onButton(){
 
 void WiFiEvent(WiFiEvent_t event){
     switch(event) {
-        case ARDUINO_EVENT_WIFI_AP_START:
+        case SYSTEM_EVENT_AP_START:
             Serial.println("AP Started");
             WiFi.softAPsetHostname(AP_SSID);
             break;
-        case ARDUINO_EVENT_WIFI_AP_STOP:
+        case SYSTEM_EVENT_AP_STOP:
             Serial.println("AP Stopped");
             break;
-        case ARDUINO_EVENT_WIFI_STA_START:
+        case SYSTEM_EVENT_STA_START:
             Serial.println("STA Started");
             WiFi.setHostname(AP_SSID);
             break;
-        case ARDUINO_EVENT_WIFI_STA_CONNECTED:
+        case SYSTEM_EVENT_STA_CONNECTED:
             Serial.println("STA Connected");
             WiFi.enableIpV6();
             break;
-        case ARDUINO_EVENT_WIFI_STA_GOT_IP6:
+        case SYSTEM_EVENT_AP_STA_GOT_IP6:
             Serial.print("STA IPv6: ");
             Serial.println(WiFi.localIPv6());
             break;
-        case ARDUINO_EVENT_WIFI_STA_GOT_IP:
+        case SYSTEM_EVENT_STA_GOT_IP:
             Serial.print("STA IPv4: ");
             Serial.println(WiFi.localIP());
             break;
-        case ARDUINO_EVENT_WIFI_STA_DISCONNECTED:
+        case SYSTEM_EVENT_STA_DISCONNECTED:
             Serial.println("STA Disconnected");
             break;
-        case ARDUINO_EVENT_WIFI_STA_STOP:
+        case SYSTEM_EVENT_STA_STOP:
             Serial.println("STA Stopped");
             break;
         default:
