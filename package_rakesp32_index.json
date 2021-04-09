@@ -12,12 +12,12 @@
 				{
 					"name": "RAKwireless ESP32 Boards",
 					"architecture": "esp32",
-					"version": "1.0.1",
+					"version": "1.0.2",
 					"category": "ESP32",
-					"url": "https://github.com/RAKWireless/RAK-ESP32-Arduino/archive/refs/tags/1.0.1.zip",
-					"archiveFileName": "1.0.1.zip",
-					"checksum": "SHA-256:F3BEB042297D5BA338E45E1CB20FF4A85C5FEA4F8EDA8631F38BB4945BFC43EE",
-					"size": "108336757",
+					"url": "https://github.com/RAKWireless/RAK-ESP32-Arduino/archive/refs/tags/1.0.2.zip",
+					"archiveFileName": "1.0.2.zip",
+					"checksum": "SHA-256:7FD40A34A8FA7EB6B86DED659185E5EBF044D78E0072C6AA63D2E46D9EEFC5D1",
+					"size": "108336805",
 					"help": {
 						"online": "https://forum.rakwireless.com/"
 					},
