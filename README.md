@@ -1,44 +1,39 @@
 # RAKwireless Arduino core for the ESP32
 <!--[![Build Status](https://travis-ci.org/espressif/arduino-esp32.svg?branch=master)](https://travis-ci.org/espressif/arduino-esp32) ![](https://github.com/espressif/arduino-esp32/workflows/ESP32%20Arduino%20CI/badge.svg) -->
-| <img src="./docs/RAK.png" alt="Modules" width="150"> | <img src="./docs/rakstar.jpg" alt="Modules" width="100"> | <img src="./docs/RAK11200.png" alt="Modules" width="250"> |
+| <img src="./assets/RAK.png" alt="Modules" width="150"> | <img src="./assets/rakstar.jpg" alt="Modules" width="100"> | <img src="./assets/RAK11200.png" alt="Modules" width="250"> |
 | :-: | :-: | :-: |
 
 ## Credits
-This BSP is based on the [ArduinoESP32 BSP](https://github.com/espressif/arduino-esp32). We will keep this BSP inline with the original BSP.
+This BSP is based on Espressif's [ArduinoESP32 BSP](https://github.com/espressif/arduino-esp32). We will keep this BSP updated with the original BSP.
 
 ## Contents
-<!-- [Development Status](#development-status) -->
 - [Installation Instructions](#installation-instructions)
+- [IMPORTANT NOTE](#important-note)
+- [RAK11200 Connector PINMAP](#rak11200-connector-pinmap)
+- [Using RAK5005-O IOs in your sketch](#using-rak5005-o-ios-in-your-sketch)
 - [Decoding Exceptions](#decoding-exceptions)
 - [Issue/Bug reports](#issuebug-reports)
-- [RAK11200 Connector PINMAP](#rak11200-connector-pinmap)
 
-<!--
-### Development Status
 
-Latest Stable Release  [![Release Version](https://img.shields.io/github/release/espressif/arduino-esp32.svg?style=plastic)](https://github.com/espressif/arduino-esp32/releases/latest/) [![Release Date](https://img.shields.io/github/release-date/espressif/arduino-esp32.svg?style=plastic)](https://github.com/espressif/arduino-esp32/releases/latest/) [![Downloads](https://img.shields.io/github/downloads/espressif/arduino-esp32/latest/total.svg?style=plastic)](https://github.com/espressif/arduino-esp32/releases/latest/)
-
-Latest Development Release  [![Release Version](https://img.shields.io/github/release/espressif/arduino-esp32/all.svg?style=plastic)](https://github.com/espressif/arduino-esp32/releases/latest/) [![Release Date](https://img.shields.io/github/release-date-pre/espressif/arduino-esp32.svg?style=plastic)](https://github.com/espressif/arduino-esp32/releases/latest/) [![Downloads](https://img.shields.io/github/downloads-pre/espressif/arduino-esp32/latest/total.svg?style=plastic)](https://github.com/espressif/arduino-esp32/releases/latest/)
--->
-
-### Installation Instructions
+## Installation Instructions
 - Using Arduino IDE Boards Manager (preferred)
   + [Instructions for Boards Manager](http://docs.rakwireless.com/Product-Categories/WisBlock/RAK11200/Quickstart/#arduino-ide-bsp-installation)
 
-### Decoding exceptions
+## IMPORTANT NOTE
+Different to other ESP32 boards, the RAK11200 needs to be put _**manually**_ into _**download mode**_. If you do not force the RAK11200 _**download mode**_, you cannot upload your sketch from Arduino IDE (or PlatformIO).  
+  
+To force the RAK11200 into _**download mode**_ you need to connect the pin _**BOOT0**_ on the WisBlock Base RAK5005-O to _**GND**_ and push the reset button.    
+The _**BOOT0**_ pin is on the J10 pin header, the _**GND**_ pin is next to it.  
+  
+![Force Download Mode](./assets/Boot0-for-flashing.png)
 
-You can use [EspExceptionDecoder](https://github.com/me-no-dev/EspExceptionDecoder) to get meaningful call trace.
-
-### Issue/Bug reports 
-Please report issues and bugs in the [RAKwireless Forum](https://forum.rakwireless.com/c/wisblock/67).
-
-### RAK11200 Connector PINMAP
+## RAK11200 Connector PINMAP
 
 The RAK11200 module has a ESP32-WROVER module at its core. The figure below shows the core module pins and connection information.
 
-![ESP32 pinout](./docs/ESP32-Pinout.png)
+![ESP32 pinout](./assets/ESP32-Pinout.png)
 
-WisBlock Core RAK11200 Pin Assignment
+WisBlock Core RAK11200 Connector Pin Assignment
 
 | Pin number WisBlock | Function | Pin name | Pin number ESP32|
 | :----------: | ---------| ---- | ------- |
@@ -83,6 +78,43 @@ WisBlock Core RAK11200 Pin Assignment
 | 39 |  GND | GND | 1, 15, 38 |
 | 40 |  GND | GND | 1, 15, 38 |
 
-### Tip
+## Using RAK5005-O IOs in your sketch
+To make it easier to use the RAK5005-O IO's in your sketch/application, we have pre-defined all the GPIO's and Analog inputs already:
+```cpp  
+#define LED_GREEN   12
+#define LED_BLUE    2
 
-Sometimes to program ESP32 via serial you must keep GPIO0 LOW during the programming process
+#define WB_IO1      14
+#define WB_IO2      27
+#define WB_IO3      26
+#define WB_IO4      23
+#define WB_IO5      13
+#define WB_IO6      22
+#define WB_SW1      34
+#define WB_A0       36
+#define WB_A1       39
+#define WB_CS       32
+#define WB_LED1     12
+#define WB_LED2     2
+```
+So if you need to access the IO1 of the RAK5005-O, you can simply write    
+```cpp
+pinMode(WB_IO1, INPUT);
+digitalRead(WB_IO1);
+```
+Or if you want to use the green LED of the RAK5005-O:  
+```cpp
+pinMode(LED_GREEN, OUTPUT);
+// Switch LED off
+digitalWrite(LED_GREEN, LOW);
+// Switch LED on
+digitalWrite(LED_GREEN, HIGH);
+```
+
+## Decoding exceptions
+
+You can use [EspExceptionDecoder](https://github.com/me-no-dev/EspExceptionDecoder) to get meaningful call trace.
+
+## Issue/Bug reports 
+Please report issues and bugs in the [RAKwireless Forum](https://forum.rakwireless.com/c/wisblock/67).
+
