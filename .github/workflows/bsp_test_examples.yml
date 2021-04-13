@@ -71,6 +71,14 @@ jobs:
         mv NimBLE-Arduino /home/runner/Arduino/libraries/NimBLE-Arduino
         git clone --quiet https://github.com/emelianov/modbus-esp8266
         mv modbus-esp8266 /home/runner/Arduino/libraries/modbus-esp8266
-        
+        git clone --quiet https://github.com/marian-craciunescu/ESP32Ping
+        mv ESP32Ping /home/runner/Arduino/libraries/ESP32Ping
+        git clone --quiet https://github.com/marian-craciunescu/ESP32Ping
+        mv ESP32Ping /home/runner/Arduino/libraries/ESP32Ping
+        git clone --quiet https://github.com/knolleary/pubsubclient
+        mv pubsubclient /home/runner/Arduino/libraries/pubsubclient
+        git clone --quiet https://github.com/arduino-libraries/Arduino_JSON
+        mv Arduino_JSON /home/runner/Arduino/libraries/Arduino_JSON
+       
     - name: test platforms
       run: python3 ci/build_platform.py rak11200
