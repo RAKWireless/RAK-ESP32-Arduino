@@ -69,7 +69,8 @@ jobs:
 
         git clone --quiet https://github.com/h2zero/NimBLE-Arduino
         mv NimBLE-Arduino /home/runner/Arduino/libraries/NimBLE-Arduino
-
+        git clone --quiet https://github.com/emelianov/modbus-esp8266
+        mv modbus-esp8266 /home/runner/Arduino/libraries/modbus-esp8266
         
     - name: test platforms
       run: python3 ci/build_platform.py rak11200
