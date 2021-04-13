@@ -1,7 +1,7 @@
 # RAKwireless Arduino core for the ESP32
-<!--[![Build Status](https://travis-ci.org/espressif/arduino-esp32.svg?branch=master)](https://travis-ci.org/espressif/arduino-esp32) ![](https://github.com/espressif/arduino-esp32/workflows/ESP32%20Arduino%20CI/badge.svg) -->
-| <img src="./assets/RAK.png" alt="Modules" width="150"> | <img src="./assets/rakstar.jpg" alt="Modules" width="100"> | <img src="./assets/RAK11200.png" alt="Modules" width="250"> |
-| :-: | :-: | :-: |
+
+| <img src="./assets/RAK.png" alt="Modules" width="150"> | <img src="./assets/rakstar.jpg" alt="Modules" width="100"> | <img src="./assets/RAK11200.png" alt="Modules" width="250"> | [![Build Status](https://github.com/RAKWireless/RAK-ESP32-Arduino/workflows/RAK%20BSP%20Arduino%20Build%20CI/badge.svg)](https://github.com/RAKWireless/RAK-ESP32-Arduino/actions) |    
+| :-: | :-: | :-: | :-: |    
 
 ## Credits
 This BSP is based on Espressif's [ArduinoESP32 BSP](https://github.com/espressif/arduino-esp32). We will keep this BSP updated with the original BSP.
