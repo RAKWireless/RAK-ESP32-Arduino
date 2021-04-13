@@ -66,6 +66,10 @@ jobs:
         git clone --quiet https://github.com/adafruit/Adafruit_BusIO
         mv Adafruit_BusIO /home/runner/Arduino/libraries/Adafruit_BusIO
 
+
+        git clone --quiet https://github.com/h2zero/NimBLE-Arduino
+        mv NimBLE-Arduino /home/runner/Arduino/libraries/NimBLE-Arduino
+
         
     - name: test platforms
       run: python3 ci/build_platform.py rak11200
