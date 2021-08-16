@@ -6,6 +6,9 @@
 ## Credits
 This BSP is based on Espressif's [ArduinoESP32 BSP](https://github.com/espressif/arduino-esp32). We will keep this BSP updated with the original BSP.
 
+* **[WisBlock WiFi Module RAK11200](https://store.rakwireless.com/collections/wisblock-core/products/wiscore-esp32-module-rak11200)**
+* **[Documentation](https://docs.rakwireless.com/Product-Categories/WisBlock/RAK11200/Overview/)**
+
 ## Contents
 - [Installation Instructions](#installation-instructions)
 - [IMPORTANT NOTE](#important-note)
@@ -27,13 +30,17 @@ The _**BOOT0**_ pin is on the J10 pin header, the _**GND**_ pin is next to it.
   
 ![Force Download Mode](./assets/Boot0-for-flashing.png)
 
+## Decoding exceptions
+
+You can use [EspExceptionDecoder](https://github.com/me-no-dev/EspExceptionDecoder) to get meaningful call trace.
+
 ## RAK11200 Connector PINMAP
 
 The RAK11200 module has a ESP32-WROVER module at its core. The figure below shows the core module pins and connection information.
 
 ![ESP32 pinout](./assets/ESP32-Pinout.png)
 
-WisBlock Core RAK11200 Connector Pin Assignment
+WisBlock Core RAK11200 Pin Assignment
 
 | Pin number WisBlock | Function | Pin name | Pin number ESP32|
 | :----------: | ---------| ---- | ------- |
@@ -110,10 +117,6 @@ digitalWrite(LED_GREEN, LOW);
 // Switch LED on
 digitalWrite(LED_GREEN, HIGH);
 ```
-
-## Decoding exceptions
-
-You can use [EspExceptionDecoder](https://github.com/me-no-dev/EspExceptionDecoder) to get meaningful call trace.
 
 ## Issue/Bug reports 
 Please report issues and bugs in the [RAKwireless Forum](https://forum.rakwireless.com/c/wisblock/67).
