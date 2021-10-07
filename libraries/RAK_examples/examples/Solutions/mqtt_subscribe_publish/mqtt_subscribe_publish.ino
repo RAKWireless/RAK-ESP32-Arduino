@@ -8,7 +8,7 @@
 **/
 
 #include <WiFi.h>
-#include <PubSubClient.h> // https://github.com/knolleary/pubsubclient/archive/master.zip
+#include <PubSubClient.h> // http://librarymanager/All#PubSubClient
 #include <Wire.h>
 #include <Adafruit_Sensor.h>
 #include "Adafruit_BME680.h" //http://librarymanager/All#Adafruit_BME680

@@ -1,5 +1,8 @@
 menu.UploadSpeed=Upload Speed
-
+menu.CDCOnBoot=USB CDC On Boot
+menu.MSCOnBoot=USB Firmware MSC On Boot
+menu.DFUOnBoot=USB DFU On Boot
+menu.UploadMode=Upload Mode
 menu.CPUFreq=CPU Frequency
 menu.FlashFreq=Flash Frequency
 menu.FlashMode=Flash Mode
@@ -10,20 +13,23 @@ menu.PSRAM=PSRAM
 menu.Revision=Board Revision
 menu.LORAWAN_REGION=LoRaWan Region
 menu.LoRaWanDebugLevel=LoRaWan Debug Level
-
-
-##############################################################
+menu.LoopCore=Arduino Runs On
+menu.EventsCore=Events Run On
 
 WisCore_RAK11200_Board.name=WisCore RAK11200 Board
 
 WisCore_RAK11200_Board.upload.tool=esptool_py
 WisCore_RAK11200_Board.upload.maximum_size=1310720
 WisCore_RAK11200_Board.upload.maximum_data_size=327680
-WisCore_RAK11200_Board.upload.wait_for_upload_port=true
+WisCore_RAK11200_Board.upload.flags=
+WisCore_RAK11200_Board.upload.extra_flags=
 
 WisCore_RAK11200_Board.serial.disableDTR=true
 WisCore_RAK11200_Board.serial.disableRTS=true
 
+WisCore_RAK11200_Board.build.tarch=xtensa
+WisCore_RAK11200_Board.build.bootloader_addr=0x1000
+WisCore_RAK11200_Board.build.target=esp32
 WisCore_RAK11200_Board.build.mcu=esp32
 WisCore_RAK11200_Board.build.core=esp32
 WisCore_RAK11200_Board.build.variant=WisCore_RAK11200_Board
@@ -35,7 +41,8 @@ WisCore_RAK11200_Board.build.flash_freq=40m
 WisCore_RAK11200_Board.build.flash_mode=dio
 WisCore_RAK11200_Board.build.boot=dio
 WisCore_RAK11200_Board.build.partitions=default
-WisCore_RAK11200_Board.build.defines=-DBOARD_HAS_PSRAM -mfix-esp32-psram-cache-issue
+WisCore_RAK11200_Board.build.defines=-DBOARD_HAS_PSRAM -mfix-esp32-psram-cache-issue -mfix-esp32-psram-cache-strategy=memw
+WisCore_RAK11200_Board.build.extra_libs=
 
 WisCore_RAK11200_Board.menu.PartitionScheme.default=Default 4MB with spiffs (1.2MB APP/1.5MB SPIFFS)
 WisCore_RAK11200_Board.menu.PartitionScheme.default.build.partitions=default

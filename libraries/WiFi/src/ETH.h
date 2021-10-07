@@ -22,6 +22,7 @@
 #define _ETH_H_
 
 #include "WiFi.h"
+#include "esp_system.h"
 #include "esp_eth.h"
 
 #ifndef ETH_PHY_ADDR
@@ -48,14 +49,28 @@
 #define ETH_CLK_MODE ETH_CLOCK_GPIO0_IN
 #endif
 
-typedef enum { ETH_PHY_LAN8720, ETH_PHY_TLK110, ETH_PHY_IP101, ETH_PHY_MAX } eth_phy_type_t;
+#if ESP_IDF_VERSION_MAJOR > 3
+typedef enum { ETH_CLOCK_GPIO0_IN, ETH_CLOCK_GPIO0_OUT, ETH_CLOCK_GPIO16_OUT, ETH_CLOCK_GPIO17_OUT } eth_clock_mode_t;
+#endif
+
+typedef enum { ETH_PHY_LAN8720, ETH_PHY_TLK110, ETH_PHY_RTL8201, ETH_PHY_DP83848, ETH_PHY_DM9051, ETH_PHY_KSZ8081, ETH_PHY_MAX } eth_phy_type_t;
+#define ETH_PHY_IP101 ETH_PHY_TLK110
 
 class ETHClass {
     private:
         bool initialized;
-        bool started;
         bool staticIP;
+#if ESP_IDF_VERSION_MAJOR > 3
+        esp_eth_handle_t eth_handle;
+
+    protected:
+        bool started;
+        eth_link_t eth_link;
+        static void eth_event_handler(void *arg, esp_event_base_t event_base, int32_t event_id, void *event_data);
+#else
+        bool started;
         eth_config_t eth_config;
+#endif
     public:
         ETHClass();
         ~ETHClass();

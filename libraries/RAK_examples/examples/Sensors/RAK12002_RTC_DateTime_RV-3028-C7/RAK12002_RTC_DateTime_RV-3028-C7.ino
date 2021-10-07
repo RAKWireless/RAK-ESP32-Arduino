@@ -32,10 +32,7 @@ void setup()
       break;
     }
   }
-
-  Wire.begin();
-  rtc.initI2C(); // First initialize and create the rtc device
- 
+  rtc.initDevice(); // First initialize and create the rtc device
 
   rtc.writeToRegister(0x35,0x00);  
   rtc.writeToRegister(0x37,0xB4); //Direct Switching Mode (DSM): when VDD < VBACKUP, switchover occurs from VDD to VBACKUP
