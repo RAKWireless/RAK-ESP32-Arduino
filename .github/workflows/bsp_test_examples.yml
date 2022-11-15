@@ -161,8 +161,8 @@ jobs:
         mv RAK12039-PMSA003I /home/runner/Arduino/libraries/RAK12039-PMSA003I
         git clone --quiet https://github.com/RAKWireless/RAK13801_UWB
         mv RAK13801_UWB /home/runner/Arduino/libraries/RAK13801_UWB
-        /home/runner/work/RAK-nRF52-Arduino/RAK-nRF52-Arduino/bin/arduino-cli lib install RAK13800_W5100S
-        /home/runner/work/RAK-nRF52-Arduino/RAK-nRF52-Arduino/bin/arduino-cli lib install RAK12029-LDC1614
+        /home/runner/work/RAK-nRF52-Arduino/RAK-ESP32-Arduino/bin/arduino-cli lib install RAK13800_W5100S
+        /home/runner/work/RAK-nRF52-Arduino/RAK-ESP32-Arduino/bin/arduino-cli lib install RAK12029-LDC1614
        
         # ESP32 specific libraries
         
